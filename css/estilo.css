@@ -19,7 +19,6 @@ header {
   margin-bottom: 1rem;
   margin-top:2rem;
   opacity: 0.9;
-  
 }
 
 /*#logoTopo {
@@ -30,7 +29,7 @@ header {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 4rem;
+  padding: 1.2rem;
 }
 
 .tituloTop {
@@ -61,6 +60,18 @@ p {
   line-height: 1rem;
   font-weight: bold;
   color: #333;
+}
+
+.diaDaSemana-font{
+  font-weight: bold;
+  font-size: 3em;
+  text-transform: uppercase;
+  color:#E02F2F;
+  background:#f3f2f2;
+  border: #dbd9d9;
+  border-radius: 3px;
+  padding:1rem;
+ 
 }
 
 .informacao {
@@ -321,7 +332,7 @@ i {
 }
 .promocaoTitulo {
   font-size: 22px;
-  font-weight: 500;
+  font-weight:200;
   text-transform: uppercase;
   text-align: center;
   font-family: "Anton", sans-serif;

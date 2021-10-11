@@ -1,8 +1,4 @@
-
-//"use strict";
-const result = document.getElementById("result");
-const botaoPromocao = document.querySelector('#botao-promocao');
-console.log(botaoPromocao);
+const diaResult = document.querySelector(".diaDaSemana");
 
 const data = new Date();
 const diaDaSemana = new Array();
@@ -31,10 +27,9 @@ const diaPromocao = diaDaSemana[data.getDay()];
 ];*/
 
 //Array com os pratos cadastrados:
-/*const pratos = new Array();
+const pratos = new Array();
 
 pratos[0] = {
-  //Dia: diaDaSemana[0],
   Prato: "Filé a parmegina",
   Descricao: "File a parmegina acompanhado de arroz e fritas",
   codigo: "001",
@@ -66,146 +61,37 @@ pratos[5] = {
   codigo: "006",
 };
 
-pratos[6] = {
-  Prato: "Filé de salmão com batatas",
-  Descricao: "Filé de salmão com batatas acompanhado de arroz a la grega",
-  codigo: "007",
-};
-
 console.log(pratos);
-*/
+
 //Função contrutora de pratos
-//Aqui criei uma função construtora modelo para os pratos do dia.
-function PratoDoDia(dia, prato, descricao, codigo, disponivel, img ) {
-      this.dia = dia;
-      this.prato = prato;
-      this.descricao = descricao;
-      this.codigo = codigo;
-      this.disponivel = disponivel;
-      this.img = img;
-   
-}
-//Prato 1
-const prato_1 = new PratoDoDia(
-  diaDaSemana[0],
-  "Filé a parmegina",
-  "File a parmegina acompanhado de arroz e fritas",
-  "001",
-  true,
-  img = "img/prato_1.png",
-);
-
-
-
-//Prato 2
-const prato_2 = new PratoDoDia(
-  diaDaSemana[1],
-  "Nhoque de carne",
-  "Nhoque de carne acompanhado de arroz e fritas",
-  "002",
-  true,
-  img = "img/prato_2.png",
-
-);
-
-//Prato 3
-const prato_3 = new PratoDoDia(
-  diaDaSemana[2],
-  "Macarrão a bolonhesa",
-  "Macarrão a bolonhesa com bastante sugo",
-  "003",
-  true,
-  img = "img/prato_3.png",
-);
-
-const prato_4 = new PratoDoDia(
-  diaDaSemana[3],
-  "Strogonofe de carne",
-  "Strogonofe de carne com arroz e fritas",
-  "004",
-   true,
-   img = "img/prato_4.png",
-
-);
-
-
-const prato_5 = new PratoDoDia(
-  diaDaSemana[4],
-  "Carne assada",
-  "Carne assada de arroz e fritas",
-  "005",
-   true,
-   img = "img/prato_5.png",
-);
-
-const prato_6 = new PratoDoDia(
-  diaDaSemana[5],
-  "Lasanha ao 4 queijos",
-  "Lasanha ao 4 queijos gratinada",
-  "006",
-   true,
-   img = "img/prato_6.png",
-
-);
-
-
-const prato_7 = new PratoDoDia(
-  diaDaSemana[6],
-  "Lasanha ao 4 queijos",
-  "Lasanha ao 4 queijos gratinada",
-  "006",
-   true,
-   img = "img/prato_7.png",
-);
-
-console.log(PratoDoDia)
-
-//Aqui criei a array cardapio de pratos e com o push inclui todos os pratos
-const cardapioDePratos = [];
-cardapioDePratos.push(prato_1, prato_2, prato_3, prato_4, prato_5, prato_6, prato_7);
-//console.log(cardapioDePratos);
-//se o dia da semana for igual ao dia da semnana do prato do dia mostrar o prato
-
-cardapioDePratos.forEach((prato)=>{
-  //console.log(prato.dia)
-  const pratoDia = prato.dia;
-  //console.log(prato.img)  
-  let foto = document.createElement("IMG");
-    foto.src = prato.img;
-  if (pratoDia === diaPromocao){
-    result.innerHTML = `<h4> Hoje é ${diaPromocao}! <br>Prato do dia:<strong> ${prato.prato}</strong>. </h4> `;
-    foto.classList.add("img-thumbnail", "img-fluid", "imgagem_produto");
-    foto.addEventListener('mouseenter', ()=>{
-      foto.classList.toggle("efeito-pulse");
-      //alert('É UM SHOWWWWW DE PIROCA!!!!')
-
-    })
-    document.querySelector('#result').appendChild(foto);
-    //inserir botao da promocao
-    //result.innerHTML =  botaoPromocao;
-  }else{
-    return false;
-  }
-})
-
-function diaDaSemanaFuncao() {
+function PratoDoDia(dia, pratos_do_dia, descricao, codigo) {
   diaDaSemana.forEach((i) => {
-    //console.log(i)
-    if (diaPromocao === i) {
-      console.log(`Hoje é ${i}`);
-    } else {
-      return false;
-    }
+    pratos.forEach((prato_unico) => {
+      //console.log(i)
+      this.dia = i;
+      this.prato = prato_unico;
+      this.descricao = prato_unico.Descricao;
+      this.codigo = prato_unico.codigo;
+    });
   });
 }
 
-diaDaSemanaFuncao();
+//PratoDoDia();
+
+const prato_1 = new PratoDoDia(
+  diaDaSemana[0],
+  pratos[0].Prato,
+  pratos[0].Descricao,
+  pratos[0].codigo
+);
 
 
-
-
-
-
+const prato_2 = new PratoDoDia(
+  diaDaSemana[1],
+  pratos[1].Prato,
+  pratos[1].Descricao,
+  pratos[1].codigo
+);
 /*"Filé a parmegina",
   "Filé a parmegina acompanhado de arroz e fritas",
   "102"
@@ -216,6 +102,23 @@ diaDaSemanaFuncao();
   //["Filé a parmegina", "Nhoque de carne", "Carne Assada"]
   pratoDoDia[0] = ["Filé a parmegina", "Nhoque de carne", "Carne Assada"];
   */
+
+
+
+  function diaDaSemanaFuncao() {
+    diaDaSemana.forEach((i) => {
+      //console.log(i)
+      if (diaPromocao === i) {
+        console.log(`Hoje é ${i}`);
+        diaResult.innerHTML = `Hoje é ${i}! dia de ${pratos[0].Prato}`;
+      } else {
+        return false;
+      }
+    });
+  }
+  
+  diaDaSemanaFuncao();
+  
 
 /*--------------------------------*/
 const sabores = [
@@ -243,7 +146,7 @@ const sabores = [
 ];
 
 sabores.forEach((i) => {
-  //console.log(i);
+  console.log(i);
 });
 
 /*const pratosDaSemana = [{
