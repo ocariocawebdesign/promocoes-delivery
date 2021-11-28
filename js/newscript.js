@@ -160,6 +160,15 @@ const sabores = [
     "Primo",
     "Tomate seco com rúcula",
   ];
+
+
+
+
+
+
+
+
+  
   
   //Efeito pulse
   const imgsDestaques = document.querySelectorAll("#container-destaques img");

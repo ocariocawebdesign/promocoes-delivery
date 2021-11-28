@@ -1,4 +1,3 @@
-# promocoes-delivery
- Site de promoções delivery desenvolvido em HTML / CSS e JS puro.
-
-URL: https://ocariocawebdesign.github.io/promocoes-delivery/
+# primocappodelivery
+Projeto de sistema de pedidos integrado com whatsapp.
+Com HTML, CSS, e JavaScript puro.
